@@ -5,7 +5,10 @@ php:
   - 7.1
 
 before_script:
-  - composer install --no-progress --prefer-source
+  - composer install --no-progress --prefer-source --no-interaction --dev
 
 script:
-  - vendor/bin/phpunit
+  - vendor/bin/phpunit --coverage-clover=coverage.xml
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
