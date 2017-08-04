@@ -36,13 +36,13 @@ $callback = Matcher::for(
         return "Hi, my name is $name.";
     },
     function(int $age) {
-        return "I am $age yeas old.";
+        return "I am $age years old.";
     }
 );
 
 $callback('Giuseppe'); // "Hi, my name is Giuseppe."
 
-$callback(35);         // "I am 35 yeas old."
+$callback(35);         // "I am 35 years old."
 ```
 
 In the snippet above, among the callbacks passed to `Matcher::for()` the one whose arguments *type* 
@@ -56,18 +56,18 @@ For example:
 ```php
 $callback = Matcher::for(
     function(string $name, int $age) {
-        return "Hi, my name is $name and I am $age yeas old.";
+        return "Hi, my name is $name and I am $age years old.";
     },
     function(int $age, string $name) {
-        return "Hi, my name is $name and I am $age yeas old.";
+        return "Hi, my name is $name and I am $age years old.";
     },
     function(int $children) {
         return $children === 1 ? 'I have 1 child.' : "I have $children children.";
     }
 );
 
-$callback('Giuseppe', 35); // "Hi, my name is Giuseppe and I am 35 yeas old."
-$callback(35, 'Giuseppe'); // "Hi, my name is Giuseppe and I am 35 yeas old."
+$callback('Giuseppe', 35); // "Hi, my name is Giuseppe and I am 35 years old."
+$callback(35, 'Giuseppe'); // "Hi, my name is Giuseppe and I am 35 years old."
 $callback(1);              // "I have 1 child."
 ```
 
