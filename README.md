@@ -1,5 +1,12 @@
 # Toobo Matching
 
+--------
+[![travis-ci status](https://img.shields.io/travis/Toobo/matching.svg?style=flat-square)](https://travis-ci.org/Toobo/matching)
+[![codecov.io](https://img.shields.io/codecov/c/github/Toobo/matching.svg?style=flat-square)](http://codecov.io/github/Toobo/matching?branch=master)
+[![license](https://img.shields.io/packagist/l/toobo/matching.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+[![release](https://img.shields.io/github/release/Toobo/matching.svg?style=flat-square)](https://github.com/Toobo/matching/releases/latest)
+--------
+
 For devs who ever played with functional programming languages, one of the very missing feature in 
 PHP is **"pattern matching"**.
 
