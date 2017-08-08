@@ -140,25 +140,4 @@ final class CallbackDataStorage implements \Countable, \IteratorAggregate
 
         return [$reflection, $reflection->getClosure()];
     }
-
-    /**
-     * @param \Closure $closure
-     * @param $object
-     * @return \Closure
-     */
-    private function boundClosure(\Closure $closure, $object): \Closure
-    {
-        // Quite hackish, but it seems there's no better way to see if a closure can be bound
-        $testBound = @\Closure::bind($closure, new \stdClass);
-        if (
-            $testBound === null
-            || (new \ReflectionFunction($testBound))->getClosureThis() === null
-        ) {
-            return $closure;
-        }
-
-        return (new \ReflectionClass($object))->isUserDefined()
-            ? \Closure::bind($closure, $object, get_class($object))
-            : \Closure::bind($closure, $object);
-    }
 }
