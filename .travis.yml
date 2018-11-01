@@ -3,9 +3,10 @@ language: php
 php:
   - 7.0
   - 7.1
+  - 7.2
 
 before_script:
-  - composer install --no-progress --prefer-source --no-interaction --dev
+  - composer install --no-progress --prefer-source --no-interaction
 
 script:
   - vendor/bin/phpunit --coverage-clover=coverage.xml
