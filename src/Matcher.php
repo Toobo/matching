@@ -93,7 +93,7 @@ final class Matcher
         if (!is_object($object)) {
             throw Exception\InvalidBindTarget::forValue($object);
         }
-        
+
         $this->bound = $object;
 
         return $this;

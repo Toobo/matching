@@ -129,6 +129,13 @@ class ArgumentMatcherTest extends TestCase
         static::assertFalse($matcher->matchTypeForNonObject(new \stdClass(), \stdClass::class));
     }
 
+    public function testMatchTypeForNonObjectReturnFalseIfValueIsNull()
+    {
+        $matcher = new ArgumentMatcher();
+
+        static::assertFalse($matcher->matchTypeForNonObject(null, ''));
+    }
+
     public function testMatchTypeForNonObjectReturnTrueIfMatch()
     {
         $matcher = new ArgumentMatcher();
